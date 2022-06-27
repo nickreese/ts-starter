@@ -1,1 +1,1 @@
-# ts-starter
+# starter

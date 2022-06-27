@@ -1,49 +1,39 @@
 {
-  "name": "starter",
-  "version": "0.0.1",
-  "description": "build checking script",
+  "name": "change-me",
+  "version": "1.0.0",
+  "description": "change-me",
   "private": true,
-  "main": "build/index.js",
+  "main": "./build/build.js",
   "scripts": {
-    "build": "rimraf ./build && tsc",
-    "dev": "nodemon ./src/index.ts",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:coverage": "jest --collect-coverage",
-    "eslint": "eslint --ext .ts .",
-    "eslint:fix": "eslint --fix --ext .ts ."
+    "start": "npm run dev",
+    "build": "run-s build:ts",
+    "build:ts": "etsc --config=etsc.config.cjs",
+    "dev": "npm run watch:watch",
+    "watch:watch": "run-p watch:ts watch:type-check",
+    "watch:ts": "nodemon",
+    "watch:type-check": "tsc -p tsconfig.json -w",
+    "ts": "nodemon"
   },
-  "files": [
-    "build/**/*"
-  ],
+  "type": "module",
   "engines": {
-    "node": ">= 12.0.0"
+    "node": ">= 14.10.0"
   },
-  "keywords": [],
-  "author": "",
-  "license": "NONE",
   "dependencies": {
-    "eslint": "^7.7.0",
-    "eslint-config-prettier": "^6.11.0",
-    "eslint-config-standard": "^14.1.1",
-    "eslint-plugin-import": "^2.22.0",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-prettier": "^3.1.4",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-security": "^1.4.0",
-    "eslint-plugin-standard": "^4.0.1",
-    "merge2": "^1.4.1",
-    "prettier": "^2.1.1"
   },
   "devDependencies": {
-    "@types/node": "^14.14.10",
-    "nodemon": "^2.0.6",
-    "ts-node": "^9.0.0",
-    "typescript": "^4.1.2"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
+    "@types/node": "^17.0.35",
+    "@typescript-eslint/eslint-plugin": "^4.0.1",
+    "@typescript-eslint/parser": "^4.0.1",
+    "esbuild": "^0.14.43",
+    "esbuild-node-tsc": "^1.8.6",
+    "eslint": "^7.21.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "nodemon": "^2.0.16",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.1.2",
+    "typescript": "^4.7.2"
   }
 }

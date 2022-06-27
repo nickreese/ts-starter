@@ -103,9 +103,4 @@ dist
 # TernJS port file
 .tern-port
 
-
-compiled/*
-node_modules
-build
-___ELDER___
-public
+/build/
